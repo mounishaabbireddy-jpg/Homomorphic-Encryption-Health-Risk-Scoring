@@ -61,7 +61,14 @@ export async function initializeHE(): Promise<{
   keygenMs: number;
   publicKeySizeBytes: number;
 }> {
-  const seal = await SEAL();
+  const seal = await SEAL({
+  locateFile: (path: string) => {
+    if (path.endsWith('.wasm')) {
+      return `https://unpkg.com/node-seal@7.0.0/dist/${path}`;
+    }
+    return path;
+  }
+});
 
   const t0 = performance.now();
 
