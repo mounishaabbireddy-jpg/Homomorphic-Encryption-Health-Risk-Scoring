@@ -12,7 +12,7 @@ import {
   type HEContext,
   type EncryptedVitals,
   type TimingInfo,
-} from "@/lib/he";
+} from "../lib/he";
 
 // ── Feature configs ─────────────────────────────────────────────────────────
 const FEATURE_CONFIGS = [
